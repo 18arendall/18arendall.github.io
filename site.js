@@ -23,3 +23,5 @@ else{
     
     p.innerHTML = `<p>Good Evening</p>`
 }
+
+localStorage.setItem(`It's a secret to everybody.`, `It's not a secret anymore.`)
