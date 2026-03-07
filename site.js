@@ -72,6 +72,7 @@ const todoList = document.querySelector('.todo-list')
 
 //retrieve local data
 const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+localStorage.setItem('todo-list', JSON.stringify(todos))
 
 //render to do list
 const renderTodos = () => {
