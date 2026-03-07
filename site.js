@@ -63,3 +63,35 @@ prev.addEventListener('click', () => {
     currentImage -= 1
     showImages()
 })
+
+
+//To Do List
+//initialize input data and todoList
+const input = document.querySelector('#new-todo')
+const todoList = document.querySelector('.todo-list')
+
+//retrieve local data
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+
+//render to do list
+const renderTodos = () => {
+    todoList.innerHTML = ''
+
+    todos.forEach(todo => { 
+        const li = document.createElement('li')
+        li.textContent = todo.text
+        todoList.append(li) 
+    })
+    
+}
+
+//render to do list on page load
+document.addEventListener('DOMContentLoaded', function(){
+    renderTodos()
+})
+
+//push data to array, add to local storage, render todos all in one button click
+const button = document.querySelector('#AddToDo')
+button.addEventListener('click',() => todos.push({ text: input.value, completed: false }))
+button.addEventListener('click',() => localStorage.setItem('todo-list', JSON.stringify(todos)))
+button.addEventListener('click',() => renderTodos())
