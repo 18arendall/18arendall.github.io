@@ -24,7 +24,7 @@ else{
     p.innerHTML = `<p>Good Evening</p>`
 }
 
-localStorage.setItem(`It's a secret to everybody.`, `It's not a secret anymore.`)
+//localStorage.setItem(`It's a secret to everybody.`, `It's not a secret anymore.`)
 
 const urls = [
     'https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -72,7 +72,7 @@ const todoList = document.querySelector('.todo-list')
 
 //retrieve local data
 const todos = JSON.parse(localStorage.getItem('todo-list')) || []
-localStorage.setItem('todo-list', JSON.stringify(todos))
+
 
 //render to do list
 const renderTodos = () => {
@@ -88,6 +88,7 @@ const renderTodos = () => {
 
 //render to do list on page load
 document.addEventListener('DOMContentLoaded', function(){
+    localStorage.setItem('todo-list', JSON.stringify(todos))
     renderTodos()
 })
 
