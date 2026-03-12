@@ -3,6 +3,9 @@ body{
     background-color: black;
 }
 
+a{
+    color:bisque;
+}
 p{
     color:white;
 }

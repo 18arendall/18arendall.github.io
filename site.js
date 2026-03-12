@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 //push data to array, add to local storage, render todos all in one button click
-const button = document.querySelector('button')
+const button = document.querySelector('#AddToDo')
 button.addEventListener('click',() => todos.push({ text: input.value, completed: false }))
 button.addEventListener('click',() => localStorage.setItem('todo-list', JSON.stringify(todos)))
 button.addEventListener('click',() => renderTodos())
